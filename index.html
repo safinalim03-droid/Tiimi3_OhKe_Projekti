@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tasks</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      h1,
+      h2 {
+        color: #333;
+      }
+
+      section {
+        background: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+
+      input,
+      select,
+      button {
+        padding: 8px;
+        margin: 5px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      #tasksList,
+      #reportArea {
+        margin-top: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        min-height: 100px;
+        background-color: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task management</h1>
+
+    <!-- Lisätään tehtävä -->
+    <section>
+      <h2>Add a new task</h2>
+      <input type="text" id="taskName" placeholder="Insert new task" />
+      <input type="button" id="addTaskBtn" value="Add task" onclick="insertTask()" />
+    </section>
+
+    <!-- Näytetään tehtävälista -->
+    <section>
+      <h2>Task list</h2>
+      <div id="tasksList">Tasks are...</div>
+    </section>
+
+    <!-- Päivitetään tehtävää-->
+    <section>
+      <h2>Update task</h2>
+      <input type="text" id="updateTaskName" placeholder="Give task name" />
+
+      <select id="newStatus">
+        <option value="Not Started">Not started</option>
+        <option value="In Progress">In progress</option>
+        <option value="Done">Done</option>
+      </select>
+
+      <input type="button" value="Update task" onclick="updateTaskInformation()" />
+    </section>
+    <!-- Raportointi -->
+    <section>
+      <h2>Summary</h2>
+      <input type="button" id="showSummaryBtn" value="Show Summary" onclick="showSummary()" />
+      <div id="reportArea">Summary of tasks...</div>
+    </section>
+
+    <script>
+      let tasks = [];
+
+      function insertTask() {}
+
+      function updateTaskInformation() {}
+
+      function refresh() {}
+
+      function showSummary() {}
+    </script>
+    <!-- JavaScript-tiedostot -->
+    <script src="addTask.js"></script>
+    <script src="refreshTaskList.js"></script>
+    <script src="updateTask.js"></script>
+    <script src="reports.js"></script>
+  </body>
+</html>
