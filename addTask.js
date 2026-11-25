@@ -13,7 +13,7 @@ function addTask() {
     let task = {
         name: taskName, //tallennetaan tehtävän nimi
         created: new Date(), //tehtävän luontiajankohta
-        status: "Not started" //oletustilaksi Not started
+        status: "Not Started" //oletustilaksi Not started
 
     }
 
@@ -23,13 +23,15 @@ function addTask() {
     //tyhjennetään tekstikenttä onnistuneen lisäyksen jälkeen
     document.getElementById("taskName").value = "";
 
-    //päivitetään tehtävälistaa
-    refreshlist();
 
     // tulostetaan tehtävät konsoliin testausta varten
     console.log(tasks);
+}
 
-
+//HTML:n painike kutsuu insertTask()-funktiota
+//Tämä käynnistää addTask()-funktion
+function insertTask() {
+    addTask();
 
 }
 
