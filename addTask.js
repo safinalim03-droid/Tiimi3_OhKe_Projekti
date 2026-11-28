@@ -1,4 +1,5 @@
-//Funktiolla listätään uusi tehtävä taulukkoon
+
+ //Funktiolla listätään uusi tehtävä taulukkoon
 function addTask() {
     //Haetaan käyttäjän kirjottama teksti HTML:n tekstikentästä
     let taskName = document.getElementById("taskName").value;
@@ -7,7 +8,10 @@ function addTask() {
     if (taskName == "") {
         alert("Enter a task");
         return; //keskeytetään suoritus, jos kenttä on tyhjä
-    }
+    } else if (tasks.some(t => t.name === taskName)) {
+        alert("Task already exists");
+        return;
+    } 
 
     //luodaan uusi tehtävä
     let task = {
@@ -23,6 +27,7 @@ function addTask() {
     //tyhjennetään tekstikenttä onnistuneen lisäyksen jälkeen
     document.getElementById("taskName").value = "";
 
+    refreshList();
 
     // tulostetaan tehtävät konsoliin testausta varten
     console.log(tasks);
@@ -34,7 +39,3 @@ function insertTask() {
     addTask();
 
 }
-
-
-
-

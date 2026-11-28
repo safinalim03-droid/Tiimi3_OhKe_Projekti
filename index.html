@@ -32,7 +32,7 @@
         <option value="Done">Done</option>
       </select>
 
-      <input type="button" value="Update task" onclick="updateTaskInformation()" />
+      <input type="button" value="Update task" onclick="updateTask()" />
     </section>
     <!-- Raportointi -->
     <section>
@@ -46,9 +46,9 @@
 
       function insertTask() {}
 
-      function updateTaskInformation() {}
+      function updateTask() {}
 
-      function refresh() {}
+      function refreshList() {}
 
       function showSummary() {}
     </script>
@@ -57,5 +57,13 @@
     <script src="refreshTaskList.js"></script>
     <script src="updateTask.js"></script>
     <script src="reports.js"></script>
+    <script>
+      document.getElementById("taskName").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+          insertTask();
+        }
+      });
+    </script>
+    
   </body>
 </html>
